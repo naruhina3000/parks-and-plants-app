@@ -1,0 +1,18 @@
+
+<% if flash[:success] %>
+<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <span><strong>Yay!</strong> 🎉 <%= flash[:success] %>.</span>
+  <a data-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+
+<% elsif flash[:alert] %>
+
+<div class="flash flash-warning alert alert-dismissible fade show" role="alert">
+  <span><strong>Mmh</strong> 🤔 <%= flash[:alert] %>.</span>
+  <a data-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+<% end %>

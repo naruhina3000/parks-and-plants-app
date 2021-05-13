@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap/scss/bootstrap";
+@import "components/index";
+
+@import "select2/dist/css/select2";
+
+body {
+  background-color: rgb(238, 238, 238);
+}

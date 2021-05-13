@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card p-5">
+                <h1><%= @plant.name %></h1>
+                <div>
+                    <% @plant.plant_tags.each do |plant_tag| %>
+                    <span>
+                    #<%= plant_tag.tag.name.upcase %>
+                    <%= link_to "X", plant_tag_path(plant_tag), method: :delete %>
+                    </span>
+                    <% end %>
+                </div>
+                <%= simple_form_for [@plant, @plant_tag] do |f| %>
+                <%= f.input :tag, collection: @free_tags.map { |tag| [tag.name, tag.id] }, input_html: { multiple: true } %>
+                <%= f.submit label: "Add a Tag" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
